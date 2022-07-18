@@ -10,7 +10,7 @@ const Contact = () => {
 
     const handleSending = async () => {
         const response = await toast.promise(
-            axios.post("http://45.77.167.49:4000", {email, name, message}),
+            axios.post("https://api-andy-li.herokuapp.com/", {email, name, message}),
             {
                 pending: 'Sending',
                 success: 'Message sent',
