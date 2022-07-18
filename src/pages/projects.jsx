@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
 import { getProjects } from "../services/fakeProjectsService";
+import { motion } from "framer-motion";
 
 const Projects = () => {
     const [projects, ] = useState(() => getProjects());
     return (
-        <div className="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 mt-8">
+        <motion.div
+            initial={{ opacity: 0 , y: 100}}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 mt-8">
             <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
                 {projects.map((project) => (
-                    <div
+                    <motion.div
+                        whileHover={{
+                            scale: 1.1,
+                            transition: { ease: "easeOut", duration: 0.3 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
                         key={project.id}
                         className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
                     >
@@ -31,10 +41,10 @@ const Projects = () => {
                                 </span>)}
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

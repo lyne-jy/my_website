@@ -17,18 +17,16 @@ const App = () => {
     return (
         <div className="App">
             <NavBar/>
-            <div className="frame">
-                <AnimatePresence exitBeforeEnter>
-                    <Routes>
-                        <Route path='/' exact element={<Home/>}/>
-                        <Route path='/about' element={<About/>}/>
-                        <Route path='/projects' element={<Projects/>}/>
-                        <Route path='/contact' element={<Contact/>}/>
-                        <Route path='/photos' element={<Photos/>}/>
-                        <Route path='*' element={<NotFound/>}/>
-                    </Routes>
-                </AnimatePresence>
-            </div>
+            <AnimatePresence exitBeforeEnter>
+                <Routes>
+                    <Route path='/' exact element={<Home/>}/>
+                    <Route path='/about' element={<About/>}/>
+                    <Route path='/projects' element={<Projects/>}/>
+                    <Route path='/contact' element={<Contact/>}/>
+                    <Route path='/photos' element={<Photos/>}/>
+                    <Route path='*' element={<NotFound/>}/>
+                </Routes>
+            </AnimatePresence>
             <Footer/>
             <ToastContainer />
         </div>

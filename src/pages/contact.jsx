@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const Contact = () => {
     const [email, setEmail] = useState("");
@@ -19,7 +20,12 @@ const Contact = () => {
     };
 
     return (
-    <div className="container-sm mt-4">
+    <motion.div
+        initial={{ opacity: 0 , y: 100}}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+        className="container-sm mt-4">
         <div>
             <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
@@ -83,13 +89,18 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            <button
+                            <motion.button
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { ease: "easeOut", duration: 0.2 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
                                 type="submit"
                                 onClick={handleSending}
                                 className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none"
                             >
                                 Send
-                            </button>
+                            </motion.button>
                         </div>
                     </div>
                 </div>
@@ -134,7 +145,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
     );
 };
 

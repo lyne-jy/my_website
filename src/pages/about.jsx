@@ -1,10 +1,16 @@
 import React from 'react';
 import { CameraIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const About = () => {
     return (
-        <div className="bg-white overflow-hidden">
+        <motion.div
+            initial={{ opacity: 0 , y: 100}}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="bg-white overflow-hidden">
             <div className="relative max-w-7xl mx-auto pt-6 px-4 sm:px-6 lg:px-8">
                 <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
                 <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
@@ -107,7 +113,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
