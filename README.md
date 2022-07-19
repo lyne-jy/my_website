@@ -2,4 +2,4 @@
 
 Visit my website: https://andy-li.dev
 
-This website is built with React, and Express
+This website is built with React and Express
