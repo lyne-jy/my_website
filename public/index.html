@@ -39,5 +39,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div class="sakana-box"></div>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/sakana@1.0.8"></script>
+  <script>
+    // 启动
+    Sakana.setMute(false);
+    Sakana.init({
+      el:         '.sakana-box',     // 启动元素 node 或 选择器
+      scale:      .5,                // 缩放倍数
+      canSwitchCharacter: true,      // 允许换角色
+    });
+  </script>
+  <style>
+    html{
+      background: #CCC;
+    }
+    html .sakana-box{
+      position: fixed;
+      right: 0;
+      bottom: 0;
+
+      transform-origin: 100% 100%; /* 从右下开始变换 */
+    }
+  </style>
 </html>

@@ -26,6 +26,7 @@
     "react-router-dom": "^6.1.0",
     "react-scripts": "^5.0.1",
     "react-toastify": "^9.0.6",
+    "sakana": "^1.0.8",
     "uninstall": "^0.0.0",
     "web-vitals": "^1.1.2",
     "yet-another-react-lightbox": "^1.10.0"
